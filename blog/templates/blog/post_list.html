@@ -8,18 +8,15 @@
 		<div>
 			<h1><a href="">Django Girls Blog</a></h1>
 		</div>
-
+		{{my_posts}}
+			{% for post in my_posts%}
 		<div>
-			<p>published: 14.06.2014, 12:14</p>
-			<h2><a href="">Ilk blogum</a></h2>
-			<p>çok heyecanlıyım, bu benim ilk blogum.</p>
+			<p>published: {{post.yayinlanma_tarihi}}</p>
+			<h2><a href="">{{post.baslik}}</a></h2>
+			<p>{{post.yazi}}</p>
 		</div>
 
-		<div> 
-			<p>published: 14.06.2014, 12:14</p>
-			<h2><a href="">Ikinci blogum</a></h2>
-			<p>çok heyecanlıyım, bu benim ikinci blogum.</p>
-		</div>
+		{% endfor %}
 	</body>
 
 </html>
